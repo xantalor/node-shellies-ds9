@@ -22,6 +22,7 @@ For the first generation, see [node-shellies](https://github.com/alexryd/node-sh
 - [Shelly Plus Plug IT](https://shelly-api-docs.shelly.cloud/gen2/Devices/Gen2/ShellyPlusPlugIT)
 - [Shelly Plus H&T +V3](https://shelly-api-docs.shelly.cloud/gen2/Devices/Gen2/ShellyPlusHT)
 - [Shelly Plus 0-10V Dimmer](https://shelly-api-docs.shelly.cloud/gen2/Devices/Gen2/ShellyPlus10V)
+- [Shelly Plus RGBW PM](https://shelly-api-docs.shelly.cloud/gen2/Devices/Gen2/ShellyPlusRGBWPM)
 - [Shelly Dimmer 0/1-10V PM](https://shelly-api-docs.shelly.cloud/gen2/Devices/Gen3/ShellyDimmer0110VPMG3)
 - [Shelly Dimmer](https://shelly-api-docs.shelly.cloud/gen2/Devices/Gen3/ShellyDimmerG3)
 - [Shelly Pro 1](https://shelly-api-docs.shelly.cloud/gen2/Devices/Gen2/ShellyPro1)
@@ -46,12 +47,12 @@ import {
   MdnsDeviceDiscoverer,
   Shellies,
   ShellyPlus1,
-} from "shellies-ds9";
+} from 'shellies-ds9';
 
 const shellies = new Shellies();
 
 // handle discovered devices
-shellies.on("add", async (device: Device) => {
+shellies.on('add', async (device: Device) => {
   console.log(`${device.modelName} discovered`);
   console.log(`ID: ${device.id}`);
 
@@ -65,8 +66,8 @@ shellies.on("add", async (device: Device) => {
 });
 
 // handle asynchronous errors
-shellies.on("error", (deviceId: DeviceId, error: Error) => {
-  console.error("An error occured:", error.message);
+shellies.on('error', (deviceId: DeviceId, error: Error) => {
+  console.error('An error occured:', error.message);
 });
 
 // create an mDNS device discoverer
